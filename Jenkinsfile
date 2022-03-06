@@ -37,5 +37,10 @@ pipeline {
                 echo 'Deploying....'
             }
         }
+         stage('print our build causes') {
+            steps {
+                echo "${currentBuild.buildCauses}"
+            }
+        }
     }
 }
