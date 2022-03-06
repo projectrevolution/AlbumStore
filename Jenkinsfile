@@ -9,6 +9,20 @@ pipeline {
         }
 
       }
+      stage('triggered by SCMTrigger') {
+        when {
+              expression {
+
+                  triggeredBy 'SCMTrigger'
+              }
+
+          }
+          steps {
+              script {
+                  echo 'triggered by SCMTrigger'
+              }
+          }
+      }
 
         stage('Build') {
             steps {
