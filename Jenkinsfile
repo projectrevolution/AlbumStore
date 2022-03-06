@@ -11,10 +11,8 @@ pipeline {
       }
       stage('triggered by SCMTrigger') {
         when {
-              expression {
+          triggeredBy 'SCMTrigger'
 
-                  triggeredBy 'SCMTrigger'
-              }
 
           }
           steps {
