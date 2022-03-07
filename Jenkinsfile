@@ -24,6 +24,7 @@ pipeline {
 
         stage('Build') {
             steps {
+                sh 'npm i'
                 echo 'Building..'
             }
         }
