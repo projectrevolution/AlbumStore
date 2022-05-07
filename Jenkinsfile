@@ -1,6 +1,8 @@
+def packageJson
+
 pipeline {
     agent any
-    def packageJson
+
 
     stages {
 
@@ -26,6 +28,7 @@ pipeline {
         steps {
 
           packageJson = readJSON file: 'package.json'
+          echo "${packageJson}"
         }
 
 
