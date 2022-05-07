@@ -26,9 +26,12 @@ pipeline {
       }
       stage('Setup build environment'){
         steps {
+          script {
+            packageJson = readJSON file: 'package.json'
+            echo "${packageJson}"
+          }
 
-          packageJson = readJSON file: 'package.json'
-          echo "${packageJson}"
+
         }
 
 
