@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    def packageJson
 
     stages {
 
@@ -20,6 +21,14 @@ pipeline {
                   echo 'triggered by SCMTrigger'
               }
           }
+      }
+      stage('Setup build environment'){
+        steps {
+
+          packageJson = readJSON file: 'package.json'
+        }
+
+
       }
 
         stage('Build') {
